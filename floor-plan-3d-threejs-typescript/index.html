@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stāvu plāns</title>
+  <style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: system-ui, sans-serif;
+    }
+
+    canvas {
+        display: block;
+        touch-action: none;
+    }
+
+    #room-info {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 20px 25px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 45, 91, 0.15);
+        color: #1A1A1A;
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 320px;
+        width: 90%;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 100;
+        display: none;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    #room-info strong {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    #room-info .highlight {
+        color: #26C281;
+        font-weight: 500;
+    }
+
+    #room-info .yes { color: #26C281; }
+    #room-info .no { color: #FF5F5F; }
+
+    #reset-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        display: none;
+        padding: 10px 14px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="room-info"></div>
+  <button id="reset-btn">Visi stāvi</button>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
